@@ -1,0 +1,62 @@
+# Networking Basics
+
+## 1. Write the full form and one-line use of: HTTP, HTTPS, FTP, SMTP.
+
+| Term  | Full Form                          | Use                                                                 |
+| ----- | ---------------------------------- | ------------------------------------------------------------------- |
+| HTTP  | HyperText Transfer Protocol        | Used to transfer web pages between a browser and a web server.      |
+| HTTPS | HyperText Transfer Protocol Secure | Used to securely transfer data over the internet using encryption.  |
+| FTP   | File Transfer Protocol             | Used to upload and download files between computers over a network. |
+| SMTP  | Simple Mail Transfer Protocol      | Used to send emails from one mail server to another.                |
+
+---
+
+## 2. What is the difference between IPv4 and IPv6? (2 lines)
+
+**IPv4** uses 32-bit addresses and supports about 4.3 billion unique IP addresses.
+**IPv6** uses 128-bit addresses, provides a much larger address space, and offers improved efficiency and security.
+
+---
+
+## 3. Run `nslookup google.com` on your system and write down the IP address you get.
+
+Open **Command Prompt** and run:
+
+```bash
+nslookup google.com
+```
+
+Write the IP address shown on your system here:
+
+**IP Address:** ___________________
+
+*(Note: The IP address may be different for each user depending on location and network.)*
+
+---
+
+## 4. What do these HTTP status codes mean: 200, 301, 404, 500, 403?
+
+| Status Code | Meaning                                                                              |
+| ----------- | ------------------------------------------------------------------------------------ |
+| 200         | OK – The request was successful.                                                     |
+| 301         | Moved Permanently – The requested page has been permanently redirected to a new URL. |
+| 404         | Not Found – The requested page or resource could not be found.                       |
+| 500         | Internal Server Error – The server encountered an unexpected error.                  |
+| 403         | Forbidden – Access to the requested resource is denied.                              |
+
+---
+
+## 5. Explain DNS hierarchy (root, TLD, domain, subdomain) with `www.google.com` as an example.
+
+* **Root (.)** – The highest level in the DNS hierarchy (usually hidden).
+* **TLD (Top-Level Domain):** **.com**
+* **Domain:** **google**
+* **Subdomain:** **www**
+
+**Example:**
+For **[www.google.com](http://www.google.com)**:
+
+* Root → `.`
+* TLD → `.com`
+* Domain → `google`
+* Subdomain → `www`

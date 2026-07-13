@@ -1,0 +1,52 @@
+## 1. Name 5 IT job roles and write one line about what each role does.
+
+1. **Software Developer** – Designs, builds, and maintains software applications.
+2. **Web Developer** – Creates and manages websites and web applications.
+3. **Mobile App Developer** – Develops applications for Android and iOS devices.
+4. **Software Tester (QA Engineer)** – Tests software to find bugs and ensure quality.
+5. **Database Administrator (DBA)** – Manages databases, backups, security, and performance.
+
+---
+
+## 2. List 3 product companies and 3 service companies with one example of work each does.
+
+### Product Companies
+
+1. **Microsoft** – Develops the Windows operating system and Microsoft Office.
+2. **Google** – Develops products like Google Search, Gmail, and Android.
+3. **Adobe** – Creates software such as Photoshop and Acrobat Reader.
+
+### Service Companies
+
+1. **Tata Consultancy Services (TCS)** – Provides software development and IT consulting services.
+2. **Infosys** – Offers application development, cloud, and digital transformation services.
+3. **Wipro** – Provides IT support, software development, and business solutions.
+
+---
+
+## 3. Write the full forms and one-line use of: GitHub, Slack, Jira, IDE, API.
+
+| Term   | Full Form                                            | Use                                                                    |
+ | ---------------------------------------------------------------------- |
+| GitHub | Git + Hub (Git-based code hosting platform)          | Used to store, manage, and collaborate on source code.                 |
+| Slack  | Searchable Log of All Conversation and Knowledge     | Used for team communication and collaboration.                         |
+| Jira   | (Product name by Atlassian; not an official acronym) | Used for project management and bug tracking.                          |
+| IDE    | Integrated Development Environment                   | Used to write, edit, run, and debug code.                              |
+| API    | Application Programming Interface                    | Allows different software applications to communicate with each other. |
+
+---
+
+4. Name any 5 programming languages and mention one popular use case for each.
+
+1. Python – Data Science and Artificial Intelligence.
+2. Java – Android application development.
+3. C++ – Game development and system programming.
+4. JavaScript – Creating interactive websites.
+5. PHP – Developing dynamic websites and web applications.
+
+
+
+
+
+
+
