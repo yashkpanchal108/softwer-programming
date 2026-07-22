@@ -1,0 +1,46 @@
+# SDLC and Scrum
+
+## 1. List all 6 phases of SDLC in order with one line about each.
+
+1. **Requirement Analysis** – Gather and understand the customer's requirements.
+2. **System Design** – Create the software architecture, database, and system design.
+3. **Development (Coding)** – Write the source code based on the design.
+4. **Testing** – Test the software to identify and fix bugs.
+5. **Deployment** – Release the software for users to use.
+6. **Maintenance** – Provide updates, fix bugs, and improve the software after deployment.
+
+---
+
+## 2. Write 3 differences between Agile and Waterfall models.
+
+| Agile                                              | Waterfall                                                          |
+| -------------------------------------------------- | ------------------------------------------------------------------ |
+| Development is done in small iterations (Sprints). | Development follows one fixed sequence of phases.                  |
+| Customer feedback is taken regularly.              | Customer feedback is usually taken after the project is completed. |
+| Easy to make changes during development.           | Changes are difficult and costly once development has started.     |
+
+---
+
+## 3. Name the 3 main Scrum roles and write one line about the responsibility of each.
+
+1. **Product Owner** – Defines product requirements and prioritizes the work.
+2. **Scrum Master** – Helps the team follow Scrum practices and removes obstacles.
+3. **Development Team** – Designs, develops, and tests the product features.
+
+---
+
+## 4. What is a Sprint in Scrum? Mention its typical duration.
+
+A **Sprint** is a fixed period during which the Scrum team completes a set of planned tasks or features.
+**Typical duration:** **1 to 4 weeks** (most commonly **2 weeks**).
+
+---
+
+## 5. What do these Jira board columns mean: To Do, In Progress, Done, Backlog?
+
+| Jira Column     | Meaning                                               |
+| --------------- | ----------------------------------------------------- |
+| **Backlog**     | A list of tasks that are planned but not yet started. |
+| **To Do**       | Tasks that are ready to begin.                        |
+| **In Progress** | Tasks that are currently being worked on.             |
+| **Done**        | Tasks that have been completed successfully.          |
