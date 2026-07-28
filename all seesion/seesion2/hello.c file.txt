@@ -1,0 +1,30 @@
+//Q2.4  Compile your hello.c file using the GCC command line (gcc hello.c -o hello) and run the output file to display the message in your terminal.<br><br><em><strong>Hint:</strong> On Windows, the output file will be hello.exe; on Linux/Mac, it will be hello.</em>
+
+
+Step 1: Open Terminal / Command Prompt
+
+Us folder me jao jahan hello.c file save hai.
+
+Example:
+
+cd Desktop
+
+Step 2: Compile the C Program
+
+Ye command run karo:
+
+gcc hello.c -o hello
+
+Step 3: Run the Program
+
+Windows:
+
+hello.exe
+
+Linux/Mac:
+
+./hello
+
+Expected Output
+
+Hello, Instagram World!

@@ -1,0 +1,24 @@
+//Q1 Install GCC on your computer and verify the installation by running gcc --version in your terminal or command prompt.
+
+Install GCC
+For Windows
+
+Option 1: MSYS2 (Recommended)
+
+Download MSYS2 from: https://www.msys2.org/
+Install MSYS2.
+Open the MSYS2 UCRT64 terminal.
+
+Update packages:
+
+pacman -Syu
+
+Restart the terminal if prompted.
+
+Install GCC:
+
+pacman -S mingw-w64-ucrt-x86_64-gcc
+
+Add the following folder to your Windows PATH:
+
+C:\msys64\ucrt64\bin

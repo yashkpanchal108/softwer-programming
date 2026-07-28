@@ -1,0 +1,9 @@
+//Q3.4 Identify and correct the invalid variable names from this list: 1stPlayer, player_age, $score, total-marks, userName.<br><br><em><strong>Hint:</strong> Apply standard variable naming rules for your programming language.</em>
+
+
+Variable Name		Valid/Invalid			Correct Variable Name
+1stPlayer			❌ Invalid (starts with a digit)		firstPlayer or _1stPlayer
+player_age		✅ Valid				player_age
+$score			❌ Invalid (contains $)		score
+total-marks		❌ Invalid (contains -)		total_marks or totalMarks
+userName		✅ Valid				userName
