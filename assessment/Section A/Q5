@@ -1,0 +1,20 @@
+Question:
+Explain why an array is the correct data structure for this task compared to using 30 separate variables. Describe the two-step logic your program would follow: first to compute the average, then to identify the above-average days — and explain why both steps cannot be done in a single loop.
+
+
+
+Answer:
+
+An array is the correct data structure because it stores multiple rainfall values under one variable.
+
+Two-Step Logic:
+
+Step 1
+Store all 30 rainfall readings and calculate the average.
+
+Step 2
+Compare each reading with the average and display the days above average.
+
+Why not in one loop?
+
+The average is known only after all readings are entered, so comparison must be done in a second loop.

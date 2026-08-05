@@ -1,0 +1,19 @@
+Question:
+Explain how Bootstrap's grid class system works to produce this responsive layout. 
+Write the Bootstrap class combination you would apply to the article column div,
+and explain what each class in the combination controls.
+
+
+
+Answer:
+
+Use the Bootstrap class:
+
+class="col-12 col-md-4"
+
+Explanation:
+
+col-12
+Mobile devices → Takes full width (1 column).
+col-md-4
+Medium and larger screens → Takes 4 columns, showing 3 columns per row.

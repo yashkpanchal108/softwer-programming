@@ -1,0 +1,20 @@
+Question:
+List the appropriate HTML input types you would use for each of the five fields. Explain how you would use HTML5 built-in validation attributes to enforce the two constraints mentioned, and why these attributes alone are not sufficient for production-level validation.
+
+
+Answer:
+
+Field	Input Type
+Applicant Name	text
+Email	email
+Phone Number	tel
+Preferred Domain	select
+Resume	file
+
+Validation Attributes:
+
+required → Ensures no field is empty.
+type="email" → Accepts only valid email format.
+
+Why not enough?
+HTML validation can be bypassed, so server-side validation is also required for security.

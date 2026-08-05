@@ -1,0 +1,15 @@
+Answer:
+
+The team should use a Git Branch Workflow.
+
+Every developer should create a separate branch, complete the work, and merge it into the main branch only after review.
+
+Git Commands:
+
+1. git branch
+
+Creates a new branch for development.
+
+2. git merge
+
+Merges the completed branch into the main branch after testing.

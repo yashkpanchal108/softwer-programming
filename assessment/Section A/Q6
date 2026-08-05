@@ -1,0 +1,20 @@
+Question:
+Explain why the program crashes on an empty string input and describe the check your pointer-based solution must perform before dereferencing the pointer. How does traversing a string using a pointer differ from traversing it using array index notation, and which approach makes the empty-input bug easier to catch?
+
+
+Answer:
+
+The program crashes because the pointer tries to access an empty string.
+
+Before using the pointer, check that the string is not empty ('\0').
+
+Difference:
+
+Pointer Traversal
+Moves using the pointer address.
+Array Index Traversal
+Accesses characters using indexes (str[i]).
+
+Which is easier?
+
+Array indexing is easier to understand and makes empty-string bugs easier to detect.
