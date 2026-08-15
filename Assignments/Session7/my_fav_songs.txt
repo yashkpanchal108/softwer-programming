@@ -1,0 +1,6 @@
+1. Hotel California
+2. Bohemian Rhapsody
+3. Stairway to Heaven
+4. Imagine
+5. Shape of You
+cd "e:\yash1\Software_Engineering\CPP\Assignments\Session7\" ; if ($?) { g++ Q4.cpp -o Q4 } ; if ($?) { .\Q4 }

@@ -1,0 +1,6 @@
+cd "e:\yash1\Software_Engineering\CPP\Assignments\Session7\" ; if ($?) { g++ Q5.cpp -o Q5 } ; if ($?) { .\Q5 }
+0
+
+0
+
+0
