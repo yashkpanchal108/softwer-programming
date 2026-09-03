@@ -1,0 +1,123 @@
+// Create a BookMyShow movie poster grid where each poster uses position: relative. Add a 'New' badge to the top-left corner of one poster using position: absolute, so it overlays the image correctly.<br><br><em><strong>Hint:</strong> Use top and left properties with position: absolute inside a relatively positioned parent.</em>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMyShow Movie Poster Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333333;
+    }
+
+    /* Poster Grid Container */
+    .poster-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Individual Poster Card Container (Relative Anchor) */
+    .poster-card {
+      position: relative; /* Acts as the positioning reference for absolute children */
+      width: 200px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Movie Poster Image */
+    .poster-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Movie Title & Info */
+    .poster-info {
+      padding: 12px;
+    }
+
+    .movie-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222222;
+      margin-bottom: 4px;
+    }
+
+    .movie-genre {
+      font-size: 13px;
+      color: #666666;
+    }
+
+    /* Absolutely Positioned 'New' Badge */
+    .badge-new {
+      position: absolute; /* Positions badge relative to .poster-card */
+      top: 10px;           /* Distance from top edge */
+      left: 10px;          /* Distance from left edge */
+      background-color: #f84464; /* BookMyShow Pink/Red */
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      z-index: 2;          /* Ensures badge sits on top of image */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Recommended Movies</h2>
+
+  <div class="poster-grid">
+
+    <!-- Poster 1 with 'New' Badge Overlay -->
+    <div class="poster-card">
+      <span class="badge-new">NEW</span>
+      <img src="https://via.placeholder.com/200x300" alt="Inception Poster" class="poster-image">
+      <div class="poster-info">
+        <div class="movie-title">Inception</div>
+        <div class="movie-genre">Action / Sci-Fi</div>
+      </div>
+    </div>
+
+    <!-- Poster 2 -->
+    <div class="poster-card">
+      <img src="https://via.placeholder.com/200x300" alt="Interstellar Poster" class="poster-image">
+      <div class="poster-info">
+        <div class="movie-title">Interstellar</div>
+        <div class="movie-genre">Sci-Fi / Drama</div>
+      </div>
+    </div>
+
+    <!-- Poster 3 -->
+    <div class="poster-card">
+      <img src="https://via.placeholder.com/200x300" alt="The Dark Knight Poster" class="poster-image">
+      <div class="poster-info">
+        <div class="movie-title">The Dark Knight</div>
+        <div class="movie-genre">Action / Crime</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

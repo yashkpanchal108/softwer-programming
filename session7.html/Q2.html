@@ -1,0 +1,130 @@
+// Build a horizontal playlist bar like Spotify using Flexbox: add 5 song cards with song name and artist, and use align-items to vertically center the text in each card.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Playlist Bar</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* Horizontal container for playlist cards */
+    .playlist-bar {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    /* Individual song card */
+    .song-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content vertically within card height */
+      align-items: center;     /* Vertically centers text and content horizontally */
+      background-color: #181818;
+      width: 160px;
+      min-width: 160px;
+      height: 220px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .song-card:hover {
+      background-color: #282828;
+    }
+
+    /* Album Cover Image */
+    .cover-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+
+    /* Song details text container */
+    .song-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Ensures text lines are vertically centered aligned */
+    }
+
+    .song-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 0 5px 0;
+    }
+
+    .artist-name {
+      font-size: 12px;
+      color: #b3b3b3;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Popular Tracks</h2>
+
+  <!-- Playlist Bar Container -->
+  <div class="playlist-bar">
+
+    <!-- Song 1 -->
+    <div class="song-card">
+      <img src="https://via.placeholder.com/110/1DB954/ffffff?text=Cover+1" alt="Album Cover" class="cover-img">
+      <div class="song-info">
+        <p class="song-title">Starboy</p>
+        <p class="artist-name">The Weeknd</p>
+      </div>
+    </div>
+
+    <!-- Song 2 -->
+    <div class="song-card">
+      <img src="https://via.placeholder.com/110/1DB954/ffffff?text=Cover+2" alt="Album Cover" class="cover-img">
+      <div class="song-info">
+        <p class="song-title">Blinding Lights</p>
+        <p class="artist-name">The Weeknd</p>
+      </div>
+    </div>
+
+    <!-- Song 3 -->
+    <div class="song-card">
+      <img src="https://via.placeholder.com/110/1DB954/ffffff?text=Cover+3" alt="Album Cover" class="cover-img">
+      <div class="song-info">
+        <p class="song-title">Shape of You</p>
+        <p class="artist-name">Ed Sheeran</p>
+      </div>
+    </div>
+
+    <!-- Song 4 -->
+    <div class="song-card">
+      <img src="https://via.placeholder.com/110/1DB954/ffffff?text=Cover+4" alt="Album Cover" class="cover-img">
+      <div class="song-info">
+        <p class="song-title">Levitating</p>
+        <p class="artist-name">Dua Lipa</p>
+      </div>
+    </div>
+
+    <!-- Song 5 -->
+    <div class="song-card">
+      <img src="https://via.placeholder.com/110/1DB954/ffffff?text=Cover+5" alt="Album Cover" class="cover-img">
+      <div class="song-info">
+        <p class="song-title">Stay</p>
+        <p class="artist-name">The Kid LAROI, Justin Bieber</p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

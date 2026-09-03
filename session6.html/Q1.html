@@ -1,0 +1,132 @@
+// Create an HTML file that displays a Zomato-style restaurant card with a restaurant name, cuisine type, and rating. Use CSS to add margin, padding, and a visible border to the card so that each section is clearly separated.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato Restaurant Card</title>
+  <style>
+    /* Global Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Main Card Container */
+    .restaurant-card {
+      width: 320px;
+      background-color: #ffffff;
+      border: 1px solid #e8e8e8; /* Outer card border */
+      border-radius: 12px;
+      padding: 16px;            /* Inner spacing for the card */
+      margin: 20px;             /* Outer spacing around the card */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Restaurant Image Banner */
+    .card-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;      /* Separates image from title section */
+    }
+
+    /* Section 1: Name and Rating Header */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;      /* Padding inside the header */
+      margin-bottom: 10px;       /* Margin outside the header */
+      border-bottom: 1px dashed #e0e0e0; /* Visible border separator */
+    }
+
+    .restaurant-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1c1c1c;
+    }
+
+    .rating-badge {
+      background-color: #24963f; /* Zomato Green Rating */
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 8px;          /* Padding inside rating badge */
+      border-radius: 6px;
+    }
+
+    /* Section 2: Cuisine Details */
+    .cuisine-section {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #f0f0f0; /* Visible border separator */
+    }
+
+    .cuisine-type {
+      font-size: 14px;
+      color: #696969;
+    }
+
+    .price-for-two {
+      font-size: 13px;
+      color: #9c9c9c;
+      margin-top: 4px;
+    }
+
+    /* Section 3: Delivery Info / Footer */
+    .card-footer {
+      padding-top: 4px;          /* Separation from previous section */
+      font-size: 12px;
+      color: #1c1c1c;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .delivery-time {
+      font-weight: 600;
+      color: #e23744;            /* Zomato Red Accent */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Zomato Restaurant Card -->
+  <div class="restaurant-card">
+    
+    <!-- Image -->
+    <img src="https://via.placeholder.com/320x180" alt="Restaurant Food" class="card-image">
+
+    <!-- Section 1: Header (Name & Rating) -->
+    <div class="card-header">
+      <h3 class="restaurant-name">The Punjabi Rasoi</h3>
+      <span class="rating-badge">4.3 ★</span>
+    </div>
+
+    <!-- Section 2: Cuisine Info -->
+    <div class="cuisine-section">
+      <p class="cuisine-type">North Indian, Mughlai, Biryani</p>
+      <p class="price-for-two">₹350 for two</p>
+    </div>
+
+    <!-- Section 3: Delivery Info -->
+    <div class="card-footer">
+      <span class="delivery-time">30 mins</span>
+      <span>Free Delivery</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

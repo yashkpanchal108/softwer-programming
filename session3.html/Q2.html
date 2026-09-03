@@ -1,0 +1,48 @@
+// Add HTML5 validation attributes to your review form so that username is required, rating must be selected, and the review message must be at least 20 characters long.<br><br><em><strong>Hint:</strong> Use required, minlength, and a default unselectable option for the dropdown.</em>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Product Review Form</title>
+</head>
+<body>
+
+    <h2>Submit a Product Review</h2>
+
+    <form action="/submit-review" method="POST">
+        <!-- Username Field: Required -->
+        <div>
+            <label for="username">User Name:</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter your name" required>
+        </div>
+        <br>
+
+        <!-- Rating Dropdown Field: Default option is unselectable & dropdown is required -->
+        <div>
+            <label for="rating">Rating:</label><br>
+            <select id="rating" name="rating" required>
+                <option value="" disabled selected hidden>Select Rating</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Excellent</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Review Textarea: Required with minimum length of 20 characters -->
+        <div>
+            <label for="review">Review Message:</label><br>
+            <textarea id="review" name="review" rows="5" cols="40" placeholder="Write your product review here (minimum 20 characters)..." minlength="20" required></textarea>
+        </div>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Review</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+// Test your responsive product card by resizing your browser window and taking screenshots at mobile, tablet, and desktop widths; submit the screenshots along with a short note on what changes at each size.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Responsive Product Card Testing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f3f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Product Card Base Layout */
+    .product-card {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 4px;
+      padding: 24px;
+      position: relative;
+      border: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease-in-out;
+      margin-bottom: 30px;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #c2c2c2;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .image-container {
+      width: 40%;
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      font-size: 14px;
+      color: #878787;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 18px;
+      color: #212121;
+      font-weight: 500;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .rating-badge {
+      background-color: #388e3c;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    .rating-count {
+      color: #878787;
+      font-size: 12px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .selling-price {
+      font-size: 20px;
+      font-weight: 600;
+      color: #212121;
+    }
+
+    .original-price {
+      font-size: 16px;
+      color: #878787;
+      text-decoration: line-through;
+    }
+
+    .discount {
+      font-size: 14px;
+      color: #388e3c;
+      font-weight: 600;
+    }
+
+    .offer-tag {
+      font-size: 14px;
+      color: #000;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    /* Breakpoint 1: <= 1200px (Laptop) */
+    @media only screen and (max-width: 1200px) {
+      .product-card { padding: 20px; }
+      .brand { font-size: 13px; }
+      .title { font-size: 16px; }
+      .selling-price { font-size: 18px; }
+      .original-price, .discount, .offer-tag { font-size: 13px; }
+    }
+
+    /* Breakpoint 2: <= 900px (Tablet) */
+    @media only screen and (max-width: 900px) {
+      .product-card { padding: 16px; }
+      .brand { font-size: 12px; }
+      .title { font-size: 15px; }
+      .selling-price { font-size: 17px; }
+      .original-price, .discount, .offer-tag { font-size: 12px; }
+    }
+
+    /* Breakpoint 3: <= 600px (Mobile Layout Switch) */
+    @media only screen and (max-width: 600px) {
+      .product-card {
+        flex-direction: column;
+        max-width: 320px;
+        padding: 12px;
+      }
+      .image-container {
+        width: 100%;
+        height: 160px;
+        margin-bottom: 12px;
+      }
+      .brand { font-size: 11px; }
+      .title { font-size: 14px; }
+      .selling-price { font-size: 16px; }
+      .original-price, .discount, .offer-tag { font-size: 11px; }
+    }
+
+    /* Documentation Section */
+    .notes-card {
+      max-width: 600px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .notes-card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #212121;
+    }
+
+    .notes-card ul {
+      padding-left: 20px;
+      color: #444;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Product Card -->
+  <div class="product-card">
+    <button class="wishlist-btn" aria-label="Add to Wishlist">♥</button>
+
+    <div class="image-container">
+      <img src="https://m.media-amazon.com/images/I/71V--WZVUIL._SL1500_.jpg" alt="Wireless Headphones">
+    </div>
+
+    <div class="details">
+      <div class="brand">SONY</div>
+      <div class="title" title="Wireless Noise Cancelling Headphones">Wireless Noise Cancelling Headphones</div>
+
+      <div class="rating-row">
+        <span class="rating-badge">4.4 ★</span>
+        <span class="rating-count">(12,450)</span>
+      </div>
+
+      <div class="price-row">
+        <span class="selling-price">$199.90</span>
+        <span class="original-price">$299.90</span>
+        <span class="discount">33% off</span>
+      </div>
+
+      <div class="offer-tag">Bank Offer Available</div>
+    </div>
+  </div>
+
+  <!-- Responsive Testing Summary Note -->
+  <div class="notes-card">
+    <h2>Submission Note (Responsive Behavior Summary)</h2>
+    <ul>
+      <li><strong>Desktop (&gt; 1200px):</strong> Displays a horizontal side-by-side layout (image on the left, details on the right) with 24px padding and maximum font sizes.</li>
+      <li><strong>Tablet (601px – 900px):</strong> Maintains the horizontal layout, but padding reduces to 16px and font sizes drop proportionately to preserve spacing.</li>
+      <li><strong>Mobile (&le; 600px):</strong> The layout switches to a vertical stacked orientation (flex-direction: column). The image rests on top, padding adjusts to 12px, and text scales down for compact viewports.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
+

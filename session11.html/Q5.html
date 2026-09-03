@@ -1,0 +1,76 @@
+// Add a theme switcher button to your page that toggles between a light and dark background using Bootstrap classes, and updates the text color for readability.<br><br><em><strong>Hint:</strong> Use JavaScript to toggle 'bg-light'/'bg-dark' and 'text-dark'/'text-light' classes on the main container.</em>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Theme Switcher</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<!-- Initial setup: Light theme -->
+<body id="pageBody" class="bg-light text-dark transition-all min-vh-100 py-5">
+
+  <div class="container text-center" style="max-width: 600px;">
+    
+    <!-- Theme Switcher Button -->
+    <div class="mb-4">
+      <button id="themeToggleBtn" class="btn btn-outline-dark fw-bold px-4 py-2">
+        <i id="themeIcon" class="bi bi-moon-stars-fill me-2"></i> 
+        <span id="themeText">Switch to Dark Mode</span>
+      </button>
+    </div>
+
+    <!-- Content Card -->
+    <div id="contentCard" class="card shadow-sm border p-4 bg-white text-dark">
+      <h2 class="fw-bold mb-3">Zomato Gourmet Explorer</h2>
+      <p class="mb-0">
+        Discover top-rated fine dining restaurants, exclusive offers, and curated menus around your city. Toggle the theme button above to experience dark mode!
+      </p>
+    </div>
+
+  </div>
+
+  <!-- JavaScript for Toggling Theme Classes -->
+  <script>
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const pageBody = document.getElementById('pageBody');
+    const contentCard = document.getElementById('contentCard');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+
+    themeBtn.addEventListener('click', () => {
+      // Toggle Body Classes
+      pageBody.classList.toggle('bg-light');
+      pageBody.classList.toggle('text-dark');
+      pageBody.classList.toggle('bg-dark');
+      pageBody.classList.toggle('text-light');
+
+      // Toggle Card Styling for Dark Mode Contrast
+      contentCard.classList.toggle('bg-white');
+      contentCard.classList.toggle('text-dark');
+      contentCard.classList.toggle('bg-secondary');
+      contentCard.classList.toggle('text-white');
+
+      // Update Button Appearance and Text
+      const isDarkMode = pageBody.classList.contains('bg-dark');
+      
+      if (isDarkMode) {
+        themeBtn.classList.replace('btn-outline-dark', 'btn-outline-light');
+        themeIcon.classList.replace('bi-moon-stars-fill', 'bi-sun-fill');
+        themeText.textContent = 'Switch to Light Mode';
+      } else {
+        themeBtn.classList.replace('btn-outline-light', 'btn-outline-dark');
+        themeIcon.classList.replace('bi-sun-fill', 'bi-moon-stars-fill');
+        themeText.textContent = 'Switch to Dark Mode';
+      }
+    });
+  </script>
+
+</body>
+</html>
+

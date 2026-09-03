@@ -1,0 +1,110 @@
+// Design a Flipkart-style product tile with an image, product name, and price. Use different display properties (block, inline-block, none) to control the layout of the product name and price, and hide the price when a specific CSS class is added.<br><br><em><strong>Hint:</strong> Try toggling the class in your HTML to see the effect.</em><!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart Product Tile</title>
+  <style>
+    /* Reset & Base Setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f3f6;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Product Card Container */
+    .product-card {
+      width: 260px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Product Image - display: block forces image onto its own line */
+    .product-image {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+
+    /* Product Name - display: block forces title to span full width */
+    .product-name {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #212121;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    /* Price Section - display: block wrapper */
+    .price-wrapper {
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* Current Price & Original Price - display: inline-block allows side-by-side alignment */
+    .current-price {
+      display: inline-block;
+      font-size: 18px;
+      font-weight: bold;
+      color: #212121;
+      margin-right: 6px;
+    }
+
+    .original-price {
+      display: inline-block;
+      font-size: 14px;
+      color: #878787;
+      text-decoration: line-through;
+      margin-right: 6px;
+    }
+
+    .discount-badge {
+      display: inline-block;
+      font-size: 13px;
+      color: #388e3c;
+      font-weight: bold;
+    }
+
+    /* Hide Price Class - display: none hides element from rendering */
+    .hide-price {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Flipkart Product Tile -->
+  <div class="product-card">
+    
+    <!-- Image -->
+    <img class="product-image" src="https://via.placeholder.com/200" alt="Smart Watch">
+
+    <!-- Product Name -->
+    <h3 class="product-name">Wireless Smartwatch Series 7</h3>
+
+    <!-- Price Wrapper (Add 'hide-price' class here to hide the price) -->
+    <div class="price-wrapper">
+      <span class="current-price">₹2,499</span>
+      <span class="original-price">₹5,999</span>
+      <span class="discount-badge">58% off</span>
+    </div>
+
+  </div>
+
+</body>
+</html>

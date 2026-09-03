@@ -1,0 +1,52 @@
+// Create a Bootstrap Navbar for a music playlist app like Spotify, including links for Home, Playlists, and Profile. Make sure it collapses into a hamburger menu on mobile.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify-style Navbar</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+    <div class="container-fluid">
+      
+      <!-- Brand Logo / Name -->
+      <a class="navbar-brand text-success fw-bold fs-4 d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-spotify fs-3"></i> Spotify
+      </a>
+
+      <!-- Hamburger Button for Mobile -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#spotifyNavbar" aria-controls="spotifyNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Links -->
+      <div class="collapse navbar-collapse" id="spotifyNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
+          <li class="nav-item">
+            <a class="nav-link active fw-semibold" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">Playlists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-semibold" href="#">Profile</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Bootstrap JS Bundle (Required for Navbar Toggling) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

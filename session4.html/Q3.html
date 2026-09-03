@@ -1,0 +1,74 @@
+// Build a Flipkart-style product page section with semantic tags: use <header> for the product title and image, <nav> for category breadcrumbs, <article> for product details and description, and <footer> for offers or warranty info.<br><br><em><strong>Hint:</strong> Focus on the correct use of tags for structure, not just visual layout.</em>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Style Product Page</title>
+</head>
+<body>
+
+    <!-- Product Section -->
+    <section class="product-page">
+        
+        <!-- Category Breadcrumbs Navigation -->
+        <nav aria-label="Breadcrumb">
+            <ul>
+                <li><a href="#electronics">Electronics</a></li> &gt;
+                <li><a href="#mobiles">Mobiles &amp; Accessories</a></li> &gt;
+                <li><a href="#smartphones">Smartphones</a></li> &gt;
+                <li><span>Nothing Phone (2a) 5G</span></li>
+            </ul>
+        </nav>
+
+        <!-- Product Header (Title and Visuals) -->
+        <header>
+            <h1>Nothing Phone (2a) 5G (White, 128 GB)</h1>
+            <figure>
+                <img src="nothing-phone-2a.jpg" alt="Nothing Phone 2a 5G in White" width="300">
+                <figcaption>Front and back view of Nothing Phone (2a)</figcaption>
+            </figure>
+        </header>
+
+        <!-- Product Details and Description -->
+        <article class="product-details">
+            <h2>Product Details</h2>
+            <p class="price"><strong>Special Price:</strong> ₹23,999 <del>₹25,999</del> (7% off)</p>
+            
+            <h3>Key Features</h3>
+            <ul>
+                <li>8 GB RAM | 128 GB ROM</li>
+                <li>6.7 inch Full HD+ AMOLED Display</li>
+                <li>50MP + 50MP Rear Camera | 32MP Front Camera</li>
+                <li>5000 mAh Battery</li>
+                <li>Dimensity 7200 Pro Processor</li>
+            </ul>
+
+            <h3>Description</h3>
+            <p>
+                Engineered with efficiency and innovation at its core, the Nothing Phone (2a) offers 
+                a unique Glyph Interface, powerful dual 50 MP cameras, and a vibrant AMOLED display 
+                for an unmatched daily smartphone experience.
+            </p>
+        </article>
+
+        <!-- Product Offers and Warranty Info -->
+        <footer>
+            <section class="offers">
+                <h3>Available Offers</h3>
+                <ul>
+                    <li><strong>Bank Offer:</strong> 5% Unlimited Cashback on Flipkart Axis Bank Credit Card</li>
+                    <li><strong>Partner Offer:</strong> Sign-up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹500</li>
+                </ul>
+            </section>
+            
+            <section class="warranty">
+                <p><strong>Warranty:</strong> 1 Year Brand Warranty for Phone and 6 Months Warranty for In-Box Accessories.</p>
+            </section>
+        </footer>
+
+    </section>
+
+</body>
+</html>
