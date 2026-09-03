@@ -1,0 +1,86 @@
+// Build a fixed-position WhatsApp chat notification badge at the bottom right corner of the screen. Use position: fixed and appropriate margin and padding to ensure it stays visible even when scrolling.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Floating Chat Badge</title>
+
+  <!-- Font Awesome CDN for WhatsApp icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset & page body height to enable scrolling demonstration */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      padding: 24px;
+      height: 200vh; /* Adds scrollable page height */
+    }
+
+    /* Fixed WhatsApp Widget Container */
+    .whatsapp-badge {
+      position: fixed;   /* Keeps the badge pinned during scrolling */
+      bottom: 24px;      /* Distance from bottom */
+      right: 24px;       /* Distance from right */
+      z-index: 1000;     /* Ensures it stays above other content */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25d366; /* WhatsApp signature green */
+      color: #ffffff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .whatsapp-badge:hover {
+      background-color: #20ba5a;
+      transform: scale(1.08);
+    }
+
+    .whatsapp-icon {
+      font-size: 32px;
+    }
+
+    /* Unread Notification Counter Badge */
+    .notification-count {
+      position: absolute;
+      top: -4px;
+      right: -2px;
+      background-color: #ff3b30;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 3px 7px;
+      border-radius: 12px;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Scroll down to see the fixed badge in action</h1>
+  <p style="margin-top: 12px; color: #555;">The WhatsApp badge remains locked in the bottom-right corner regardless of scrolling position.</p>
+
+  <!-- Floating WhatsApp Chat Badge -->
+  <a href="https://wa.me/" class="whatsapp-badge" target="_blank" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+    <!-- Unread notification badge count -->
+    <span class="notification-count">1</span>
+  </a>
+
+</body>
+</html>

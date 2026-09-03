@@ -1,0 +1,58 @@
+// Create an HTML file with a container div and 4 images of your favorite apps (Instagram, WhatsApp, Zomato, Spotify) as social icons. Use CSS Flexbox to display them in a row with equal spacing using justify-content.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Icons Row</title>
+  <style>
+    /* Styling the container for centering on page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Main Flexbox container for social icons */
+    .icon-container {
+      display: flex;
+      justify-content: space-around; /* Distributes items with equal spacing */
+      align-items: center;
+      width: 80%;
+      max-width: 500px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Icon images styling */
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Container Div -->
+  <div class="icon-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="social-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Zomato_logo.png" alt="Zomato" class="social-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="social-icon">
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+// Design a Flipkart-style product grid: create a section with 6 product cards (use placeholder images and product names), and use CSS Grid to arrange them in 3 columns and 2 rows.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart Style Product Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f3f6;
+      padding: 20px;
+    }
+
+    .grid-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 16px;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
+    }
+
+    .grid-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+      color: #212121;
+    }
+
+    /* CSS Grid: 3 Columns x 2 Rows */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      gap: 16px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: box-shadow 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 12px 0 rgba(0,0,0,.15);
+    }
+
+    .wishlist-icon {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      color: #c2c2c2;
+      font-size: 18px;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+
+    .product-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #212121;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 6px;
+    }
+
+    .rating-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .badge-rating {
+      background-color: #388e3c;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 4px 2px 6px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .rating-count {
+      color: #878787;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .price-container {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .current-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: #212121;
+    }
+
+    .original-price {
+      font-size: 14px;
+      color: #878787;
+      text-decoration: line-through;
+    }
+
+    .discount {
+      font-size: 13px;
+      color: #388e3c;
+      font-weight: 600;
+    }
+
+    .tag {
+      font-size: 12px;
+      color: #26a541;
+      font-weight: 600;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <h2 class="grid-title">Suggested for You</h2>
+    
+    <div class="product-grid">
+      
+      <!-- Card 1 -->
+      <div class="product-card">
+        <span class="wishlist-icon">&#9829;</span>
+        <img class="product-image" src="https://via.placeholder.com/200x200?text=Smartphone" alt="Wireless Smartphone">
+        <div class="product-title">Wireless Smartphone (8GB RAM, 128GB)</div>
+        <div class="rating-container">
+          <span class="badge-rating">4.5 &#9733;</span>
+          <span class="rating-count">(12,450)</span>
+        </div>
+        <div class="price-container">
+          <span class="current-price">&#8377;14,999</span>
+          <span class="original-price">&#8377;19,999</span>
+          <span class="discount">25% off</span>
+        </div>
+        <div class="tag">Free delivery</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <span class="wishlist-icon">&#9829;</span>
+        <img class="product-image" src="https://via.placeholder.com/200x200?text=Headphones" alt="Noise Cancelling Headphones">
+        <div class="product-title">Noise Cancelling Bluetooth Headphones</div>
+        <div class="rating-container">
+          <span class="badge-rating">4.3 &#9733;</span>
+          <span class="rating-count">(3,120)</span>
+        </div>
+        <div class="price-container">
+          <span class="current-price">&#8377;2,499</span>
+          <span class="original-price">&#8377;4,999</span>
+          <span class="discount">50% off</span>
+        </div>
+        <div class="tag">Bank Offer Available</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <span class="wishlist-icon">&#9829;</span>
+        <img class="product-image" src="https://via.placeholder.com/200x200?text=Smartwatch" alt="Fitness Smartwatch">
+        <div class="product-title">Fitness Smartwatch with Heart Rate Monitor</div>
+        <div class="rating-container">
+          <span class="badge-rating">4.1 &#9733;</span>
+          <span class="rating-count">(8,910)</span>
+        </div>
+        <div class="price-container">
+          <span class="current-price">&#8377;1,799</span>
+          <span class="original-price">&#8377;5,999</span>
+          <span class="discount">70% off</span>
+        </div>
+        <div class="tag">Free delivery</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <span class="wishlist-icon">&#9829;</span>
+        <img class="product-image" src="https://via.placeholder.com/200x200?text=Laptop" alt="Gaming Laptop">
+        <div class="product-title">Core i5 12th Gen Gaming Laptop</div>
+        <div class="rating-container">
+          <span class="badge-rating">4.7 &#9733;</span>
+          <span class="rating-count">(954)</span>
+        </div>
+        <div class="price-container">
+          <span class="current-price">&#8377;54,990</span>
+          <span class="original-price">&#8377;68,990</span>
+          <span class="discount">20% off</span>
+        </div>
+        <div class="tag">Lowest Price in 30 days</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card">
+        <span class="wishlist-icon">&#9829;</span>
+        <img class="product-image" src="https://via.placeholder.com/200x200?text=Speaker" alt="Portable Speaker">
+        <div class="product-title">10W Portable Waterproof Bluetooth Speaker</div>
+        <div class="rating-container">
+          <span class="badge-rating">4.4 &#9733;</span>
+          <span class="rating-count">(5,620)</span>
+        </div>
+        <div class="price-container">
+          <span class="current-price">&#8377;1,199</span>
+          <span class="original-price">&#8377;2,999</span>
+          <span class="discount">60% off</span>
+        </div>
+        <div class="tag">Free delivery</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card">
+        <span class="wishlist-icon">&#9829;</span>
+        <img class="product-image" src="https://via.placeholder.com/200x200?text=Backpack" alt="Travel Backpack">
+        <div class="product-title">30L Waterproof Laptop Backpack</div>
+        <div class="rating-container">
+          <span class="badge-rating">4.2 &#9733;</span>
+          <span class="rating-count">(1,105)</span>
+        </div>
+        <div class="price-container">
+          <span class="current-price">&#8377;899</span>
+          <span class="original-price">&#8377;2,499</span>
+          <span class="discount">64% off</span>
+        </div>
+        <div class="tag">Bank Offer Available</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

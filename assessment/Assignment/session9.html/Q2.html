@@ -1,0 +1,64 @@
+// Build a Zomato restaurant listing page using Bootstrap grid: arrange two restaurant cards per row, each card showing a restaurant name and a short description.<br><br><em><strong>Hint:</strong> Use col-6 inside a row to get two equal columns per row.</em>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato Restaurant Listing</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container my-4">
+    <h2 class="mb-4 text-center">Zomato Restaurant Listing</h2>
+
+    <!-- Restaurant Grid Row -->
+    <div class="row g-3">
+      
+      <!-- Restaurant Card 1 -->
+      <div class="col-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-danger">The Spice Bazaar</h5>
+            <p class="card-text">Authentic North Indian and Mughlai delicacies served with a modern twist.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restaurant Card 2 -->
+      <div class="col-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-danger">Italiano Bistro</h5>
+            <p class="card-text">Wood-fired pizzas, handmade pasta, and classic Italian desserts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restaurant Card 3 -->
+      <div class="col-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-danger">Urban Cafe</h5>
+            <p class="card-text">Cozy ambience featuring specialty coffees, artisanal sandwiches, and pastries.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Restaurant Card 4 -->
+      <div class="col-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-danger">Dragon Express</h5>
+            <p class="card-text">Pan-Asian street food, dim sums, and spicy noodles packed with flavor.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

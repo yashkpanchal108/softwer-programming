@@ -1,0 +1,219 @@
+// Add media queries to your product card so that when the screen width is 600px or less, the card layout switches from horizontal (image and details side by side) to vertical (image on top, details below).
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Responsive Flipkart Style Product Card</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f1f3f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    /* Product Card Container */
+    .product-card {
+      width: 100%;
+      background: #fff;
+      border-radius: 4px;
+      padding: 16px;
+      position: relative;
+      transition: box-shadow 0.2s ease-in-out;
+      border: 1px solid #e0e0e0;
+      cursor: pointer;
+      display: flex;
+      
+      /* Mobile / Default Layout (<= 600px): Vertical (Stacked) */
+      flex-direction: column;
+      max-width: 300px;
+    }
+
+    /* Desktop Layout (> 600px): Horizontal (Side-by-Side) */
+    @media (min-width: 601px) {
+      .product-card {
+        flex-direction: row;
+        max-width: 600px;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+    .product-card:hover {
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    /* Wishlist Heart Icon */
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #c2c2c2;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .wishlist-btn:hover {
+      color: #ff4343;
+    }
+
+    /* Image Container */
+    .image-container {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    /* Adjust image container size for side-by-side view on larger screens */
+    @media (min-width: 601px) {
+      .image-container {
+        width: 40%;
+        height: 180px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* Product Details Wrapper */
+    .details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Brand & Title */
+    .brand {
+      font-size: 12px;
+      color: #878787;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 14px;
+      color: #212121;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 6px;
+    }
+
+    /* Rating Badge & F-Assured Logo */
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .rating-badge {
+      background-color: #388e3c;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 4px 2px 6px;
+      border-radius: 3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .rating-count {
+      color: #878787;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .fassured-img {
+      height: 14px;
+    }
+
+    /* Pricing Section */
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .selling-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: #212121;
+    }
+
+    .original-price {
+      font-size: 14px;
+      color: #878787;
+      text-decoration: line-through;
+    }
+
+    .discount {
+      font-size: 13px;
+      color: #388e3c;
+      font-weight: 600;
+    }
+
+    /* Tag/Offer */
+    .offer-tag {
+      font-size: 12px;
+      color: #000;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="product-card">
+    <button class="wishlist-btn" aria-label="Add to Wishlist">♥</button>
+
+    <div class="image-container">
+      <img src="https://m.media-amazon.com/images/I/71V--WZVUIL._SL1500_.jpg" alt="Wireless Headphones">
+    </div>
+
+    <div class="details">
+      <div class="brand">SONY</div>
+      <div class="title" title="Wireless Noise Cancelling Headphones">Wireless Noise Cancelling Headphones</div>
+
+      <div class="rating-row">
+        <span class="rating-badge">4.4 ★</span>
+        <span class="rating-count">(12,450)</span>
+        <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Flipkart Assured" class="fassured-img">
+      </div>
+
+      <div class="price-row">
+        <span class="selling-price">₹19,990</span>
+        <span class="original-price">₹29,990</span>
+        <span class="discount">33% off</span>
+      </div>
+
+      <div class="offer-tag">Bank Offer Available</div>
+    </div>
+  </div>
+
+</body>
+</html>

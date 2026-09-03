@@ -1,0 +1,45 @@
+// Build a Zomato-style food order form with inputs for user name, a select dropdown for food item (at least 3 options), quantity (number input), and a textarea for delivery instructions. Ensure all fields are labeled and use required validation.
+
+<form action="/submit-order" method="POST">
+  <h2>Zomato Food Order Form</h2>
+
+  <!-- User Name Field -->
+  <div>
+    <label for="username">Full Name:</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+
+  <br>
+
+  <!-- Select Dropdown for Food Item -->
+  <div>
+    <label for="food_item">Select Food Item:</label>
+    <select id="food_item" name="food_item" required>
+      <option value="" disabled selected>-- Select an option --</option>
+      <option value="butter_chicken">Butter Chicken with Naan</option>
+      <option value="paneer_tikka">Paneer Tikka Biryani</option>
+      <option value="cheese_pizza">Farmhouse Cheese Pizza</option>
+      <option value="hakka_noodles">Veg Hakka Noodles</option>
+    </select>
+  </div>
+
+  <br>
+
+  <!-- Quantity Field -->
+  <div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="20" required>
+  </div>
+
+  <br>
+
+  <!-- Delivery Instructions Field -->
+  <div>
+    <label for="instructions">Delivery Instructions:</label>
+    <textarea id="instructions" name="instructions" rows="4" cols="50" placeholder="e.g., Leave at the door, call upon arrival" required></textarea>
+  </div>
+
+  <br>
+
+  <button type="submit">Place Order</button>
+</form>

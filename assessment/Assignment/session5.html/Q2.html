@@ -1,0 +1,92 @@
+//  Build a Myntra-like offer banner using internal CSS (inside a tag) to set a custom font family, text color, and background color for the banner text.
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Myntra Offer Banner</title>
+
+  <!-- Google Font import for a clean, bold fashion typography -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap">
+
+  <!-- Internal CSS -->
+  <style>
+    /* Global Reset & Centering */
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background-color: #f5f5f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Outer Banner Container */
+    .banner-container {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Custom styles for the Offer Banner Text */
+    .offer-banner-text {
+      /* Custom Font Family */
+      font-family: 'Montserrat', sans-serif;
+      
+      /* Custom Background Color (Myntra Pink/Red gradient theme) */
+      background: linear-gradient(135deg, #ff3f6c 0%, #fb5607 100%);
+      
+      /* Custom Text Color */
+      color: #ffffff;
+      
+      /* Layout & Typography */
+      text-align: center;
+      padding: 24px 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Sub-text styling within the banner */
+    .offer-banner-text h2 {
+      margin: 0 0 6px 0;
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .offer-banner-text p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #fff0f3;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 14px;
+      background-color: #ffffff;
+      color: #ff3f6c;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 800;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner-container">
+    <!-- Banner Content Block -->
+    <div class="offer-banner-text">
+      <h2>Flat 50% OFF</h2>
+      <p>+ Extra 10% Off On First Order</p>
+      <a href="#" class="cta-button">SHOP NOW</a>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VortexByte | Gamer Tag Link Hub</title>
+  
+  <!-- Google Fonts: Orbitron & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* Reset & Design Tokens */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-color: #0b0e14;
+      --card-bg: rgba(18, 24, 38, 0.75);
+      --text-main: #f0f4fc;
+      --text-muted: #8e9bb0;
+      
+      /* Gaming Platform Colors */
+      --twitch-color: #9146ff;
+      --discord-color: #5865f2;
+      --steam-color: #171a21;
+      --steam-border: #2a475e;
+      
+      --neon-glow: #00f0ff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Cyberpunk Background Glows */
+    body::before {
+      content: '';
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      background: var(--twitch-color);
+      border-radius: 50%;
+      filter: blur(140px);
+      top: 5%;
+      left: 10%;
+      z-index: -1;
+      opacity: 0.35;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      background: var(--neon-glow);
+      border-radius: 50%;
+      filter: blur(140px);
+      bottom: 5%;
+      right: 10%;
+      z-index: -1;
+      opacity: 0.25;
+    }
+
+    /* Outer Wrapper using CSS Grid */
+    .hub-container {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Main Glass Card with Flexbox Layout */
+    .profile-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Avatar Container & Status Indicator */
+    .avatar-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--neon-glow);
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    }
+
+    .status-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background-color: #10b981; /* Live / Online Green */
+      border: 3px solid #0b0e14;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+    }
+
+    /* Gaming Alias Header */
+    .gamer-alias {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+      margin-bottom: 4px;
+    }
+
+    .gamer-tagline {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    /* Links Container using CSS Grid */
+    .links-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    /* Platform Buttons */
+    .platform-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .btn-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .platform-btn i {
+      font-size: 1.5rem;
+    }
+
+    .arrow-icon {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    /* Twitch Custom Styles */
+    .btn-twitch:hover {
+      background: var(--twitch-color);
+      border-color: var(--twitch-color);
+      box-shadow: 0 8px 25px rgba(145, 70, 255, 0.4);
+      transform: translateY(-3px);
+    }
+
+    /* Discord Custom Styles */
+    .btn-discord:hover {
+      background: var(--discord-color);
+      border-color: var(--discord-color);
+      box-shadow: 0 8px 25px rgba(88, 101, 242, 0.4);
+      transform: translateY(-3px);
+    }
+
+    /* Steam Custom Styles */
+    .btn-steam:hover {
+      background: var(--steam-color);
+      border-color: var(--steam-border);
+      box-shadow: 0 8px 25px rgba(42, 71, 94, 0.6);
+      transform: translateY(-3px);
+    }
+
+    .platform-btn:hover .arrow-icon {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    /* Footer Stats Bar */
+    .stats-bar {
+      width: 100%;
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--neon-glow);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    /* Media Query for Larger Desktop Screens */
+    @media (min-width: 768px) {
+      .profile-card {
+        padding: 44px 36px;
+      }
+
+      .avatar-wrapper {
+        width: 140px;
+        height: 140px;
+      }
+
+      .gamer-alias {
+        font-size: 2.2rem;
+      }
+
+      .platform-btn {
+        padding: 18px 24px;
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="hub-container">
+    <div class="profile-card">
+      
+      <!-- Avatar Section -->
+      <div class="avatar-wrapper">
+        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=400&q=80" alt="VortexByte Avatar" class="avatar-img">
+        <span class="status-badge" title="Live / Online"></span>
+      </div>
+
+      <!-- Gamer Alias & Tagline -->
+      <h1 class="gamer-alias">VortexByte</h1>
+      <p class="gamer-tagline">FPS & Tactical Shooter Broadcaster</p>
+
+      <!-- Platform Links Grid -->
+      <div class="links-grid">
+        
+        <!-- Twitch Link -->
+        <a href="https://twitch.tv" target="_blank" rel="noopener noreferrer" class="platform-btn btn-twitch">
+          <div class="btn-content">
+            <i class="bi bi-twitch"></i>
+            <span>Watch Live on Twitch</span>
+          </div>
+          <i class="bi bi-arrow-right arrow-icon"></i>
+        </a>
+
+        <!-- Discord Link -->
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="platform-btn btn-discord">
+          <div class="btn-content">
+            <i class="bi bi-discord"></i>
+            <span>Join the Discord</span>
+          </div>
+          <i class="bi bi-arrow-right arrow-icon"></i>
+        </a>
+
+        <!-- Steam Link -->
+        <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" class="platform-btn btn-steam">
+          <div class="btn-content">
+            <i class="bi bi-steam"></i>
+            <span>Steam Community</span>
+          </div>
+          <i class="bi bi-arrow-right arrow-icon"></i>
+        </a>
+
+      </div>
+
+      <!-- Footer Quick Stats -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-value">124K</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">LVL 82</span>
+          <span class="stat-label">Rank</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">4.2 K/D</span>
+          <span class="stat-label">Ratio</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

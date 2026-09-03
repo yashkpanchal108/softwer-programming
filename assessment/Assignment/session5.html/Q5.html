@@ -1,0 +1,161 @@
+// Implement a simple light/dark mode switch for a BookMyShow movie detail page using internal CSS and a toggle button. When the button is clicked, switch between light and dark color themes for the page.<br><br><em><strong>Hint:</strong> Use JavaScript to add or remove a 'dark-mode' class on the <body> and define the color themes in CSS.</em>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMyShow - Movie Detail</title>
+
+  <style>
+    /* 1. Default Light Theme Variables & Styles */
+    :root {
+      --bg-color: #f5f5f5;
+      --card-bg: #ffffff;
+      --text-color: #222222;
+      --secondary-text: #666666;
+      --accent-color: #f84464; /* BookMyShow Pink/Red */
+      --border-color: #e0e0e0;
+    }
+
+    /* 2. Dark Theme Overrides */
+    body.dark-mode {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-color: #ffffff;
+      --secondary-text: #b0b0b0;
+      --border-color: #333333;
+    }
+
+    /* Base Layout Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Header & Navigation Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 32px;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: var(--accent-color);
+    }
+
+    /* Theme Toggle Button */
+    .toggle-btn {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+
+    .toggle-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Movie Detail Layout */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 24px;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      gap: 24px;
+    }
+
+    .poster {
+      width: 200px;
+      border-radius: 8px;
+    }
+
+    .movie-info h1 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .meta-tags span {
+      background-color: rgba(248, 68, 100, 0.1);
+      color: var(--accent-color);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 6px;
+    }
+
+    .description {
+      color: var(--secondary-text);
+      line-height: 1.6;
+      margin-top: 16px;
+    }
+
+    .book-btn {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="logo">bookmyshow</div>
+    <button class="toggle-btn" id="themeToggle">Switch Theme</button>
+  </header>
+
+  <!-- Movie Detail Section -->
+  <main class="container">
+    <img class="poster" src="https://via.placeholder.com/200x300" alt="Movie Poster">
+    
+    <div class="movie-info">
+      <h1>Inception</h1>
+      <div class="meta-tags">
+        <span>2D, IMAX 3D</span>
+        <span>Action / Sci-Fi</span>
+        <span>2h 28m</span>
+      </div>
+      <p class="description">
+        A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+      </p>
+      <button class="book-btn">Book Tickets</button>
+    </div>
+  </main>
+
+  <!-- JavaScript for Mode Switch -->
+  <script>
+    const themeToggleBtn = document.getElementById('themeToggle');
+
+    themeToggleBtn.addEventListener('click', () => {
+      // Toggle the 'dark-mode' class on the <body> tag
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+
+</body>
+</html>

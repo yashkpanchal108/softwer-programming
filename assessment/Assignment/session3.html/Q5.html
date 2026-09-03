@@ -1,0 +1,56 @@
+// Add a disabled input field to your food order form that displays a fixed order ID (e.g., ORD12345) and explain in a comment why this field should be disabled for users.
+
+<form action="/submit-order" method="POST">
+  <h2>Zomato Food Order Form</h2>
+
+  <!-- 
+    The Order ID field is set to 'disabled' because it is a system-generated, read-only 
+    identifier. Users should not be able to edit or modify their unique tracking/order ID.
+  -->
+  <div>
+    <label for="order_id">Order ID:</label>
+    <input type="text" id="order_id" name="order_id" value="ORD12345" disabled>
+  </div>
+
+  <br>
+
+  <!-- User Name Field -->
+  <div>
+    <label for="username">Full Name:</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+
+  <br>
+
+  <!-- Select Dropdown for Food Item -->
+  <div>
+    <label for="food_item">Select Food Item:</label>
+    <select id="food_item" name="food_item" required>
+      <option value="" disabled selected>-- Select an option --</option>
+      <option value="butter_chicken">Butter Chicken with Naan</option>
+      <option value="paneer_tikka">Paneer Tikka Biryani</option>
+      <option value="cheese_pizza">Farmhouse Cheese Pizza</option>
+      <option value="hakka_noodles">Veg Hakka Noodles</option>
+    </select>
+  </div>
+
+  <br>
+
+  <!-- Quantity Field -->
+  <div>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="20" required>
+  </div>
+
+  <br>
+
+  <!-- Delivery Instructions Field -->
+  <div>
+    <label for="instructions">Delivery Instructions:</label>
+    <textarea id="instructions" name="instructions" rows="4" cols="50" placeholder="e.g., Leave at the door, call upon arrival" required></textarea>
+  </div>
+
+  <br>
+
+  <button type="submit">Place Order</button>
+</form>

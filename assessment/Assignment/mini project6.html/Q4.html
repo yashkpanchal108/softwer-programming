@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Profile Link Manager</title>
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .main-container {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* Container Card */
+    .form-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .form-subtitle {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-bottom: 24px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .input-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    /* Zomato-Style Icon Input Wrapper */
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 16px;
+      font-size: 1.2rem;
+      pointer-events: none;
+      transition: color 0.25s ease;
+    }
+
+    /* Input Base Styling */
+    .icon-input {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      color: #f8fafc;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .icon-input::placeholder {
+      color: #64748b;
+    }
+
+    /* Platform Color Definitions */
+    .input-wrapper.instagram i { color: #e1306c; }
+    .input-wrapper.linkedin i { color: #0a66c2; }
+    .input-wrapper.twitter i { color: #1da1f2; }
+    .input-wrapper.github i { color: #f0f6fc; }
+
+    /* Focus States */
+    .input-wrapper.instagram .icon-input:focus { border-color: #e1306c; box-shadow: 0 0 0 4px rgba(225, 48, 108, 0.15); }
+    .input-wrapper.linkedin .icon-input:focus { border-color: #0a66c2; box-shadow: 0 0 0 4px rgba(10, 102, 194, 0.15); }
+    .input-wrapper.twitter .icon-input:focus { border-color: #1da1f2; box-shadow: 0 0 0 4px rgba(29, 161, 242, 0.15); }
+    .input-wrapper.github .icon-input:focus { border-color: #94a3b8; box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.15); }
+
+    /* Submit Button */
+    .btn-save {
+      width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      border: none;
+      border-radius: 12px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-save:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* --- Preview Section & Distinct Platform Cards --- */
+    .previews-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .preview-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-radius: 16px;
+      background: #1e293b;
+      backdrop-filter: blur(8px);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .preview-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .platform-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .platform-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .platform-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .user-handle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f8fafc;
+    }
+
+    .btn-visit {
+      padding: 8px 18px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-visit:hover {
+      opacity: 0.88;
+      transform: scale(1.03);
+    }
+
+    /* Visually Distinct Platform Card Styles */
+    
+    /* Instagram Card */
+    .card-instagram {
+      border: 1px solid rgba(225, 48, 108, 0.4);
+      border-left: 5px solid #e1306c;
+      background: linear-gradient(135deg, rgba(225, 48, 108, 0.08), rgba(30, 41, 59, 0.95));
+    }
+    .card-instagram:hover { box-shadow: 0 10px 25px rgba(225, 48, 108, 0.2); }
+    .card-instagram .platform-icon-box { background: rgba(225, 48, 108, 0.15); color: #e1306c; }
+    .card-instagram .platform-name { color: #e1306c; }
+    .card-instagram .btn-visit { background: #e1306c; color: #ffffff; }
+
+    /* LinkedIn Card */
+    .card-linkedin {
+      border: 1px solid rgba(10, 102, 194, 0.4);
+      border-left: 5px solid #0a66c2;
+      background: linear-gradient(135deg, rgba(10, 102, 194, 0.08), rgba(30, 41, 59, 0.95));
+    }
+    .card-linkedin:hover { box-shadow: 0 10px 25px rgba(10, 102, 194, 0.2); }
+    .card-linkedin .platform-icon-box { background: rgba(10, 102, 194, 0.15); color: #0a66c2; }
+    .card-linkedin .platform-name { color: #0a66c2; }
+    .card-linkedin .btn-visit { background: #0a66c2; color: #ffffff; }
+
+    /* Twitter Card */
+    .card-twitter {
+      border: 1px solid rgba(29, 161, 242, 0.4);
+      border-left: 5px solid #1da1f2;
+      background: linear-gradient(135deg, rgba(29, 161, 242, 0.08), rgba(30, 41, 59, 0.95));
+    }
+    .card-twitter:hover { box-shadow: 0 10px 25px rgba(29, 161, 242, 0.2); }
+    .card-twitter .platform-icon-box { background: rgba(29, 161, 242, 0.15); color: #1da1f2; }
+    .card-twitter .platform-name { color: #1da1f2; }
+    .card-twitter .btn-visit { background: #1da1f2; color: #ffffff; }
+
+    /* GitHub Card */
+    .card-github {
+      border: 1px solid rgba(240, 246, 252, 0.3);
+      border-left: 5px solid #f0f6fc;
+      background: linear-gradient(135deg, rgba(240, 246, 252, 0.05), rgba(30, 41, 59, 0.95));
+    }
+    .card-github:hover { box-shadow: 0 10px 25px rgba(240, 246, 252, 0.15); }
+    .card-github .platform-icon-box { background: rgba(240, 246, 252, 0.15); color: #f0f6fc; }
+    .card-github .platform-name { color: #cbd5e1; }
+    .card-github .btn-visit { background: #f0f6fc; color: #0f172a; }
+  </style>
+</head>
+<body>
+
+  <div class="main-container">
+    
+    <!-- Input Form Card -->
+    <main class="form-card">
+      <h1 class="form-title">Social Profiles</h1>
+      <p class="form-subtitle">Add your social media links with embedded icon fields.</p>
+
+      <form class="input-group" id="socialForm">
+        
+        <!-- Instagram Field -->
+        <div class="input-field">
+          <label for="instagramInput" class="input-label">Instagram</label>
+          <div class="input-wrapper instagram">
+            <i class="bi bi-instagram"></i>
+            <input type="url" id="instagramInput" class="icon-input" placeholder="https://instagram.com/username">
+          </div>
+        </div>
+
+        <!-- LinkedIn Field -->
+        <div class="input-field">
+          <label for="linkedinInput" class="input-label">LinkedIn</label>
+          <div class="input-wrapper linkedin">
+            <i class="bi bi-linkedin"></i>
+            <input type="url" id="linkedinInput" class="icon-input" placeholder="https://linkedin.com/in/username">
+          </div>
+        </div>
+
+        <!-- Twitter / X Field -->
+        <div class="input-field">
+          <label for="twitterInput" class="input-label">Twitter / X</label>
+          <div class="input-wrapper twitter">
+            <i class="bi bi-twitter-x"></i>
+            <input type="url" id="twitterInput" class="icon-input" placeholder="https://x.com/username">
+          </div>
+        </div>
+
+        <!-- GitHub Field -->
+        <div class="input-field">
+          <label for="githubInput" class="input-label">GitHub</label>
+          <div class="input-wrapper github">
+            <i class="bi bi-github"></i>
+            <input type="url" id="githubInput" class="icon-input" placeholder="https://github.com/username">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-save">Generate Previews</button>
+
+      </form>
+    </main>
+
+    <!-- Previews Container -->
+    <div id="previewsSection" class="previews-container"></div>
+
+  </div>
+
+  <script>
+    // Helper function to extract handle/username from full URL
+    function extractHandle(rawUrl, platformKey) {
+      try {
+        let urlStr = rawUrl.trim();
+        if (!urlStr.startsWith('http://') && !urlStr.startsWith('https://')) {
+          urlStr = 'https://' + urlStr;
+        }
+        const parsed = new URL(urlStr);
+        const pathSegments = parsed.pathname.split('/').filter(Boolean);
+
+        if (pathSegments.length > 0) {
+          // Handle LinkedIn '/in/username' structure
+          if (platformKey === 'linkedin' && pathSegments[0] === 'in' && pathSegments[1]) {
+            return '@' + pathSegments[1];
+          }
+          return '@' + pathSegments[0];
+        }
+      } catch (e) {
+        // Fallback for custom or direct strings
+      }
+      return '@' + rawUrl.split('/').filter(Boolean).pop() || '@profile';
+    }
+
+    document.getElementById('socialForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const previewsContainer = document.getElementById('previewsSection');
+      previewsContainer.innerHTML = ''; // Clear previous previews
+
+      const platforms = [
+        { id: 'instagramInput', name: 'Instagram', key: 'instagram', icon: 'bi-instagram' },
+        { id: 'linkedinInput', name: 'LinkedIn', key: 'linkedin', icon: 'bi-linkedin' },
+        { id: 'twitterInput', name: 'Twitter / X', key: 'twitter', icon: 'bi-twitter-x' },
+        { id: 'githubInput', name: 'GitHub', key: 'github', icon: 'bi-github' }
+      ];
+
+      platforms.forEach(p => {
+        const inputVal = document.getElementById(p.id).value.trim();
+        if (inputVal) {
+          const handle = extractHandle(inputVal, p.key);
+          const fullUrl = inputVal.startsWith('http') ? inputVal : `https://${inputVal}`;
+
+          const card = document.createElement('div');
+          card.className = `preview-card card-${p.key}`;
+
+          card.innerHTML = `
+            <div class="card-left">
+              <div class="platform-icon-box">
+                <i class="bi ${p.icon}"></i>
+              </div>
+              <div class="platform-info">
+                <span class="platform-name">${p.name}</span>
+                <span class="user-handle">${handle}</span>
+              </div>
+            </div>
+            <a href="${fullUrl}" target="_blank" rel="noopener noreferrer" class="btn-visit">
+              Visit <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          `;
+
+          previewsContainer.appendChild(card);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

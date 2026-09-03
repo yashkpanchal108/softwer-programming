@@ -1,0 +1,67 @@
+// Create a Bootstrap Form for a Zomato-style restaurant review: include fields for name, rating (1-5 stars), and a review message, along with a submit button.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato - Write a Review</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-light py-5">
+
+  <div class="container" style="max-width: 600px;">
+    <!-- Review Card Wrapper -->
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-4">
+        
+        <h3 class="card-title text-danger fw-bold mb-1">
+          <i class="bi bi-pencil-square me-1"></i> Write a Review
+        </h3>
+        <p class="text-muted small mb-4">Share your dining experience with the community</p>
+
+        <!-- Review Form -->
+        <form>
+          
+          <!-- Name Field -->
+          <div class="mb-3">
+            <label for="reviewerName" class="form-label fw-semibold">Your Name</label>
+            <input type="text" class="form-control" id="reviewerName" placeholder="Enter your full name" required>
+          </div>
+
+          <!-- Rating Select Dropdown -->
+          <div class="mb-3">
+            <label for="restaurantRating" class="form-label fw-semibold">Rating</label>
+            <select class="form-select" id="restaurantRating" required>
+              <option value="" selected disabled>Select rating (1 - 5 stars)</option>
+              <option value="5">5 ★ - Exceptional</option>
+              <option value="4">4 ★ - Very Good</option>
+              <option value="3">3 ★ - Average</option>
+              <option value="2">2 ★ - Poor</option>
+              <option value="1">1 ★ - Terrible</option>
+            </select>
+          </div>
+
+          <!-- Review Message Field -->
+          <div class="mb-4">
+            <label for="reviewMessage" class="form-label fw-semibold">Review Message</label>
+            <textarea class="form-control" id="reviewMessage" rows="4" placeholder="Write about the food, ambiance, service, or pricing..." required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-danger w-100 fw-bold py-2">
+            Submit Review
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

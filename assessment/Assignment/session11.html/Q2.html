@@ -1,0 +1,52 @@
+// Build a movie review card (like BookMyShow) using Bootstrap typography utilities to style the movie title, rating, and review text with different font weights and sizes.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMyShow Movie Review Card</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-dark p-4">
+
+  <div class="container d-flex justify-content-center my-4">
+    <!-- Movie Review Card -->
+    <div class="card bg-secondary text-white shadow-lg border-0" style="max-width: 500px;">
+      <div class="card-body p-4">
+        
+        <!-- Movie Title (Large & Extra Bold) -->
+        <h2 class="fs-2 fw-bold text-uppercase mb-1">Dune: Part Two</h2>
+        
+        <!-- Genre & Language Subtitle (Small & Light Weight) -->
+        <p class="fs-6 fw-light text-light mb-3">Action, Sci-Fi | English, Hindi</p>
+
+        <!-- Rating Section (Medium Size & Bold) -->
+        <div class="d-flex align-items-center mb-3">
+          <span class="fs-5 fw-bold text-warning me-2">
+            <i class="bi bi-star-fill"></i> 9.1/10
+          </span>
+          <span class="fs-6 fw-normal text-light opacity-75">(180K+ Votes)</span>
+        </div>
+
+        <!-- Review Section Heading (Medium & Semibold) -->
+        <h6 class="fs-5 fw-semibold text-white mb-2">User Review</h6>
+
+        <!-- Review Text (Normal Body Size & Regular/Italic Weight) -->
+        <p class="fs-6 fw-normal fst-italic text-light opacity-75 mb-3">
+          "A cinematic masterpiece. The visuals, sound design, and world-building are completely unmatched on the big screen."
+        </p>
+
+        <!-- Reviewer Name (Small & Bolder) -->
+        <p class="fs-6 fw-semibold text-warning mb-0">— Alex Mercer</p>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+

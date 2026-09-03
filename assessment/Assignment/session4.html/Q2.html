@@ -1,0 +1,39 @@
+// Recreate a Zomato-style restaurant listing card using semantic HTML5 tags: use <article> for each restaurant, <header> for the restaurant name, and <footer> for rating and delivery time.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Restaurant Card</title>
+</head>
+<body>
+
+    <!-- Restaurant Card Component -->
+    <article class="restaurant-card">
+        <!-- Restaurant Header -->
+        <header>
+            <h2>Punjab Grill</h2>
+            <p><small>North Indian, Mughlai, Kebabs</small></p>
+        </header>
+
+        <!-- Main Card Content -->
+        <main class="card-body">
+            <img src="image/restaurant.jpg" alt="Punjab Grill Dish Preview" width="300" height="200">
+            <p><strong>Cost for two:</strong> ₹1,200 approx.</p>
+            <p><strong>Location:</strong> Connaught Place, New Delhi</p>
+        </main>
+
+        <!-- Restaurant Footer -->
+        <footer>
+            <div class="rating">
+                <span><strong>Rating:</strong> 4.5 ★</span>
+            </div>
+            <div class="delivery-time">
+                <span><strong>Delivery Time:</strong> 30-35 mins</span>
+            </div>
+        </footer>
+    </article>
+
+</body>
+</html>    
