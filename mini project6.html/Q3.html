@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Links Input | Iconic Form</title>
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Container Card */
+    .form-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 36px 28px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .form-subtitle {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-bottom: 28px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .input-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    /* Zomato-Style Icon Input Wrapper */
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Absolute Icon Positioning Inside Field */
+    .input-wrapper i {
+      position: absolute;
+      left: 16px;
+      font-size: 1.2rem;
+      pointer-events: none;
+      transition: color 0.25s ease;
+    }
+
+    /* Input Base Styling */
+    .icon-input {
+      width: 100%;
+      padding: 14px 16px 14px 48px; /* Left padding provides space for icon */
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      color: #f8fafc;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .icon-input::placeholder {
+      color: #64748b;
+    }
+
+    /* Platform Color Definitions */
+    .input-wrapper.instagram i { color: #e1306c; }
+    .input-wrapper.linkedin i { color: #0a66c2; }
+    .input-wrapper.twitter i { color: #1da1f2; }
+    .input-wrapper.github i { color: #f0f6fc; }
+
+    /* Focus States with Matching Accent Glows */
+    .input-wrapper.instagram .icon-input:focus {
+      border-color: #e1306c;
+      box-shadow: 0 0 0 4px rgba(225, 48, 108, 0.15);
+    }
+
+    .input-wrapper.linkedin .icon-input:focus {
+      border-color: #0a66c2;
+      box-shadow: 0 0 0 4px rgba(10, 102, 194, 0.15);
+    }
+
+    .input-wrapper.twitter .icon-input:focus {
+      border-color: #1da1f2;
+      box-shadow: 0 0 0 4px rgba(29, 161, 242, 0.15);
+    }
+
+    .input-wrapper.github .icon-input:focus {
+      border-color: #94a3b8;
+      box-shadow: 0 0 0 4px rgba(148, 163, 184, 0.15);
+    }
+
+    /* Submit Button */
+    .btn-save {
+      width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      border: none;
+      border-radius: 12px;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-save:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="form-card">
+    <h1 class="form-title">Social Profiles</h1>
+    <p class="form-subtitle">Add your social media links with embedded icon fields.</p>
+
+    <form class="input-group">
+      
+      <!-- Instagram Field -->
+      <div class="input-field">
+        <label for="instagramInput" class="input-label">Instagram</label>
+        <div class="input-wrapper instagram">
+          <i class="bi bi-instagram"></i>
+          <input type="url" id="instagramInput" class="icon-input" placeholder="https://instagram.com/username">
+        </div>
+      </div>
+
+      <!-- LinkedIn Field -->
+      <div class="input-field">
+        <label for="linkedinInput" class="input-label">LinkedIn</label>
+        <div class="input-wrapper linkedin">
+          <i class="bi bi-linkedin"></i>
+          <input type="url" id="linkedinInput" class="icon-input" placeholder="https://linkedin.com/in/username">
+        </div>
+      </div>
+
+      <!-- Twitter / X Field -->
+      <div class="input-field">
+        <label for="twitterInput" class="input-label">Twitter / X</label>
+        <div class="input-wrapper twitter">
+          <i class="bi bi-twitter-x"></i>
+          <input type="url" id="twitterInput" class="icon-input" placeholder="https://x.com/username">
+        </div>
+      </div>
+
+      <!-- GitHub Field -->
+      <div class="input-field">
+        <label for="githubInput" class="input-label">GitHub</label>
+        <div class="input-wrapper github">
+          <i class="bi bi-github"></i>
+          <input type="url" id="githubInput" class="icon-input" placeholder="https://github.com/username">
+        </div>
+      </div>
+
+      <button type="submit" class="btn-save">Save Links</button>
+
+    </form>
+  </main>
+
+</body>
+</html>
